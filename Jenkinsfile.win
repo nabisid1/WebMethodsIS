@@ -29,7 +29,7 @@ pipeline {
                 dir("E:/DevOps/CI-WORKSPCE/WORKSPACE/JENKINS_WORKSPACE") {
                 git(
                     url: "https://github.com/nabisid1/WebMethodsIS.git",
-                    branch: "release",
+                    branch: "main",
                     credentialsId: "25635f73-3b3a-45bd-b484-39736dd93436",
                     changelog: true,
                     poll: true
