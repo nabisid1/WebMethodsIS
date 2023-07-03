@@ -19,24 +19,29 @@
 */
 
 pipeline {
-    agent any 
-
+    agent any
+    environment {
+		PATH="$SAG_HOME/common/AssetBuildEnvironment/ant/bin;c:/Windows/System32;$PATH"
+	}
     stages {
-        stage('Build'){
+        stage("Clone Git Repository") {
             steps {
-                bat "${env.SAG_HOME}/common/lib/ant/bin/ant -DSAGHome=${env.SAG_HOME} -DSAG_CI_HOME=${env.SAG_CI_HOME} -DprojectName=${env.JOB_NAME} build"
+                dir("E:/DevOps/CI-WORKSPCE/WORKSPACE/JENKINS_WORKSPACE") {
+                git(
+                    url: "https://github.com/nabisid1/WebMethodsIS.git",
+                    branch: "release",
+                    credentialsId: "25635f73-3b3a-45bd-b484-39736dd93436",
+                    changelog: true,
+                    poll: true
+                )
+                }
             }
         }
-        stage('Deploy') {
-            steps {
-		bat "${env.SAG_HOME}/common/lib/ant/bin/ant -DSAGHome=${env.SAG_HOME} -DSAG_CI_HOME=${env.SAG_CI_HOME} -DprojectName=${env.JOB_NAME} deploy"
-            }
-        }
- 	stage('Test') {
-            steps {
-		bat "${env.SAG_HOME}/common/lib/ant/bin/ant -DSAGHome=${env.SAG_HOME} -DSAG_CI_HOME=${env.SAG_CI_HOME} -DprojectName=${env.JOB_NAME} test"
-		junit 'report/'
-            }
-        }
+        stage('Build') {
+			steps {
+				bat "ant -f E:/SoftwareAGwebMethods10.11/common/AssetBuildEnvironment/master_build/build.xml"
+				
+			}
+		}
     }
 }
