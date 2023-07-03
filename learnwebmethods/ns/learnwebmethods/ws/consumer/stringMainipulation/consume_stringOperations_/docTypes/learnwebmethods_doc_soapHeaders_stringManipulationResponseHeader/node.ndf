@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <record name="record" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="node_subtype">unknown</value>
+    <value name="node_nsName">learnwebmethods.ws.consumer.stringMainipulation.consume_stringOperations_.docTypes:learnwebmethods_doc_soapHeaders_stringManipulationResponseHeader</value>
+    <value name="node_pkg">learnwebmethods</value>
+    <value name="is_public">false</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <value name="form_qualified">false</value>
+    <value name="is_global">false</value>
+    <value name="schemaDomain">e4cb5d1a92e04aa4b804740e69078279</value>
+    <value name="originURI">http://localhost:5555/ws/learnwebmethods.ws.provider:provide_stringOperations?WSDL</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_subtype">unknown</value>
+        <value name="is_public">false</value>
+        <value name="field_name">tns2:stringManipulationResponseHeader</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">true</value>
+        <value name="nillable">false</value>
+        <value name="field_xmlns">learnwebmethods.doc.soapHeaders</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <value name="rec_closed">true</value>
+        <value name="modifiable">true</value>
+        <value name="rec_ref">learnwebmethods.ws.consumer.stringMainipulation.consume_stringOperations_.docTypes:docTypeRef_tns2_stringManipulationResponseHeader</value>
+      </record>
+    </array>
+    <value name="modifiable">false</value>
+  </record>
+</Values>

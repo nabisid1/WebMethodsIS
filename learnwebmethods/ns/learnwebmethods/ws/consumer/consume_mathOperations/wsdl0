@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="provide_mathOperations" targetNamespace="http://DESKTOP-VD250HU.hitronhub.home/learnwebmethods.ws.provider:provide_mathOperations" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soapjms="http://www.w3.org/2010/soapjms/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://DESKTOP-VD250HU.hitronhub.home/learnwebmethods.ws.provider:provide_mathOperations" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://DESKTOP-VD250HU.hitronhub.home/learnwebmethods.ws.provider:provide_mathOperations" xmlns:tns="http://DESKTOP-VD250HU.hitronhub.home/learnwebmethods.ws.provider:provide_mathOperations" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+          <xsd:element name="mathematicalOperations" type="tns:mathematicalOperations"/>
+          <xsd:element name="mathematicalOperationsResponse" type="tns:mathematicalOperationsResponse"/>
+          <xsd:complexType name="mathematicalOperations">
+            <xsd:sequence>
+              <xsd:element name="mathInput" nillable="true" type="tns:mathInput"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="mathInput">
+            <xsd:sequence>
+              <xsd:element name="addition" nillable="true" type="tns:addition"/>
+              <xsd:element name="subtraction" nillable="true" type="tns:subtraction"/>
+              <xsd:element name="multiplication" nillable="true" type="tns:multiplication"/>
+              <xsd:element name="division" nillable="true" type="tns:division"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="addition">
+            <xsd:sequence>
+              <xsd:element name="stringA" nillable="true" type="xsd:string"/>
+              <xsd:element name="stringB" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="subtraction">
+            <xsd:sequence>
+              <xsd:element name="stringA" nillable="true" type="xsd:string"/>
+              <xsd:element name="stringB" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="multiplication">
+            <xsd:sequence>
+              <xsd:element name="stringA" nillable="true" type="xsd:string"/>
+              <xsd:element name="stringB" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="division">
+            <xsd:sequence>
+              <xsd:element name="stringA" nillable="true" type="xsd:string"/>
+              <xsd:element name="stringB" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="mathematicalOperationsResponse">
+            <xsd:sequence>
+              <xsd:element name="mathOutput" nillable="true" type="tns:mathOutput"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="mathOutput">
+            <xsd:sequence>
+              <xsd:element name="addition" nillable="true" type="tns:addition2"/>
+              <xsd:element name="subtraction" nillable="true" type="tns:subtraction2"/>
+              <xsd:element name="multiplication" nillable="true" type="tns:multiplication2"/>
+              <xsd:element name="division" nillable="true" type="tns:division2"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="addition2">
+            <xsd:sequence>
+              <xsd:element name="string" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="subtraction2">
+            <xsd:sequence>
+              <xsd:element name="string" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="multiplication2">
+            <xsd:sequence>
+              <xsd:element name="string" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="division2">
+            <xsd:sequence>
+              <xsd:element name="string" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        	</xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="provide_mathOperations_PortType_mathematicalOperations">
+    <wsdl:part name="parameters" element="tns:mathematicalOperations">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="provide_mathOperations_PortType_mathematicalOperationsResponse">
+    <wsdl:part name="parameters" element="tns:mathematicalOperationsResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="provide_mathOperations_PortType">
+    <wsdl:operation name="mathematicalOperations">
+      <wsdl:input message="tns:provide_mathOperations_PortType_mathematicalOperations">
+    </wsdl:input>
+      <wsdl:output message="tns:provide_mathOperations_PortType_mathematicalOperationsResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="learnwebmethods_ws_provider_provide_mathOperations_Binder" type="tns:provide_mathOperations_PortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="mathematicalOperations">
+      <soap:operation soapAction="learnwebmethods_ws_provider_provide_mathOperations_Binder_mathematicalOperations" style="document"/>
+      <wsdl:input>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="learnwebmethods.ws.provider.provide_mathOperations">
+    <wsdl:port name="learnwebmethods_ws_provider_provide_mathOperations_Port" binding="tns:learnwebmethods_ws_provider_provide_mathOperations_Binder">
+      <soap:address location="http://DESKTOP-VD250HU.hitronhub.home:5555/ws/learnwebmethods.ws.provider:provide_mathOperations/learnwebmethods_ws_provider_provide_mathOperations_Port"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
